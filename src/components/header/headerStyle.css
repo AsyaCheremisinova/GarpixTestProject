@@ -1,75 +1,43 @@
-@font-face {
-  font-family: 'Geometria';
-  src: url('/src/assets/fonts/Geometria-Light.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .header {
   background-color: #FFFFFF;
-  width: 100%;
-  padding: 10px 0;
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 .logo {
-  height: 75%;
-  max-width: 180px; /* Ограничение максимальной ширины логотипа */
-}
-
-.header_menu {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
+  width: 100%;
 }
 
 .menu {
-  display: flex;
-  justify-content: center;
-  width: 50%;
+  padding: 0 2em;
+  box-sizing: border-box;
 }
 
 .menu-list {
+  height: 70px;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  padding: 0;
+  column-gap: 2em;
+  row-gap: 1.5em;
+  padding: 0.5em;
   margin: 0;
-  font-family: 'Geometria', sans-serif;
-}
 
-.menu-list li {
-  margin: 10px 15px;
-  white-space: nowrap;
-}
-
-.menu-list a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 105%;
-}
-
-.menu-list a:hover {
-  font-weight: bold;
-}
-
-.menu-list a:active,
-.menu-list a.active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-
-@media (max-width: 768px) {
-  .menu-list {
-    flex-direction: column; /* Переключение на столбцы на меньших экранах */
-    align-items: center;
+  li {
+    white-space: nowrap;
+    display: inline-block;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
   }
 
-  .menu-list li {
-    margin: 5px 0;
+  a:hover {
+    font-weight: bold;
+  }
+
+  a.active {
+    font-weight: bold;
+    text-decoration: underline;
   }
 }

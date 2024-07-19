@@ -1,4 +1,12 @@
+@font-face {
+  font-family: 'Geometria';
+  src: url('/src/assets/fonts/Geometria-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background: #F2F4F7;
   margin: 0;
+  font-family: 'Geometria', sans-serif;
 }

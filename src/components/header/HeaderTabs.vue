@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const activeLink = ref(null);
+const activeLink = ref<HTMLElement | null>(null);
 
-const setActiveLink = (event) => {
+const setActiveLink = (event: Event) => {
   if (activeLink.value) {
     activeLink.value.classList.remove('active');
   }
-  activeLink.value = event.target;
+  activeLink.value = event.target as HTMLElement;
   activeLink.value.classList.add('active');
 };
 </script>
@@ -29,4 +29,5 @@ const setActiveLink = (event) => {
   </nav>
 </template>
 
-<style src="./headerStyle.css"></style>
+<style src="./headerStyle.css">
+</style>
