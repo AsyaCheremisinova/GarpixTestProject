@@ -2,6 +2,8 @@
 import HeaderTabs from './HeaderTabs.vue'
 import City from './City.vue';
 import ButtonSignIn from './Button.vue'
+import SearchInput from './SearchInput.vue'
+import ModalWindow from './ModalWindow.vue';
 </script>
 
 <template>
@@ -14,26 +16,47 @@ import ButtonSignIn from './Button.vue'
       <HeaderTabs />
       <div class="container-right">
         <City />
-        <ButtonSignIn />
+        <div class="container-bottom">
+          <SearchInput />
+          <ButtonSignIn />
+        </div>
       </div> 
-    </div>   
+    </div>  
+    <ModalWindow /> 
   </header>
 </template>
 
 <style scoped>
+.header {
+  background-color: #FFFFFF;
+}
+
+.logo {
+  width: 100%;
+}
+
 .container-right{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.5em;
+  justify-content:center;
+  width: 100%;
+  padding-top: 0.5em;
 }
 
 .header__content {
   display: grid;
   width: 1270px;
-  grid-template-columns: 180px auto 185px;
+  grid-template-columns: 180px auto 300px;
   margin: auto;
   padding: 16px;
+}
+
+.container-bottom {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content:center;
+  align-items: end;
 }
 </style>

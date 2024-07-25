@@ -29,5 +29,40 @@ const setActiveLink = (event: Event) => {
   </nav>
 </template>
 
-<style src="./headerStyle.css">
+<style scoped>
+.menu {
+  padding-top: 0 2em;
+  box-sizing: border-box;
+}
+
+.menu-list {
+  height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  column-gap: 2em;
+  row-gap: 1.5em;
+  padding-top: 0.5em;
+  margin: 0;
+
+  li {
+    white-space: nowrap;
+    display: inline-block;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
+  }
+
+  a:hover {
+    font-weight: bold;
+  }
+
+  a.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
 </style>

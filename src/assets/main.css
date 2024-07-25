@@ -9,4 +9,6 @@ body {
   background: #F2F4F7;
   margin: 0;
   font-family: 'Geometria', sans-serif;
+  height: 100%;
+  width: 100%;
 }
