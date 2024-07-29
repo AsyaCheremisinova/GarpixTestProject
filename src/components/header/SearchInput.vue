@@ -5,11 +5,10 @@ import '@iconify/iconify';
 <template>
   <div class="magnifier-container">
     <form action="">
-      <input class="magnifier-container_input" type="search" placeholder="Поиск">
-      <button type="submit" class="magnifier-container_button">
+      <input class="magnifier-container__input" type="search" placeholder="Поиск">
+      <button type="submit" class="magnifier-container__button">
         <span class="iconify" data-icon="simple-line-icons:magnifier" data-inline="false"></span>
       </button>
-      <div class="underline"></div>
     </form>
   </div>
 </template>
@@ -28,20 +27,20 @@ form {
   position: absolute;
   right: 0;
   transition: all 0.5s;
-  width: 2em;  /* Начальная ширина */
-  height: 2em; /* Высота формы */
+  width: 2em;  
+  height: 2em; 
   background: white;
   box-sizing: border-box;
   padding: 0.25em;
   overflow: visible;
 }
 
-.magnifier-container_input {
+.magnifier-container__input {
   position: absolute;
   top: 0;
   left: 0;
   width: 99%;
-  height: 2.5em; /* Высота инпута */
+  height: 1.8em;
   line-height: 1.8em;
   outline: 0;
   border: 0;
@@ -49,9 +48,18 @@ form {
   font-size: 1em;
   padding: 1em;
   font-family: 'Geometria', sans-serif;
+  border-bottom: 0.2em solid transparent;
+  padding-bottom: 0.9em; 
+  padding-left: 0.5em; 
+  transition: all 0.5s;
 }
 
-.magnifier-container_button{
+.magnifier-container__input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.magnifier-container__button{
   border: none;
   background-color: #ffffff;
 }
@@ -70,17 +78,8 @@ form {
   background-color: #ffffff;
 }
 
-.underline {
-  position: absolute;
-  bottom: 0;
-  left: 1em;
-  width: calc(100% - 2.5em);
-  height: 0.1em; /* Толщина линии подчеркивания */
-  transition: all 0.5s;
-}
-
 form:hover {
-  width: 12.5em; /* Увеличиваем до 12.5em (200px при base font-size 16px) */
+  width: 12.5em;
   cursor: pointer;
 }
 
@@ -88,7 +87,7 @@ form:hover input {
   display: block;
 }
 
-form:hover .underline {
-  background-color: rgb(189, 189, 189);
+form:hover .magnifier-container__input {
+  border-bottom: 0.1em solid rgb(189, 189, 189);
 }
 </style>

@@ -14,7 +14,7 @@ const setActiveLink = (event: Event) => {
 
 <template>
   <nav class="menu">
-    <ul class="menu-list">
+    <ul class="menu__list">
       <li><a href="#" @click="setActiveLink">Купоны и сертификаты</a></li>
       <li><a href="#" @click="setActiveLink">Впечатления</a></li>
       <li><a href="#" @click="setActiveLink">Авиабилеты</a></li>
@@ -35,7 +35,7 @@ const setActiveLink = (event: Event) => {
   box-sizing: border-box;
 }
 
-.menu-list {
+.menu__list {
   height: 70px;
   display: flex;
   flex-wrap: wrap;

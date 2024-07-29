@@ -6,7 +6,7 @@
     <img
         alt="City icon"
         src="/src/assets/geo.svg" />
-    <label class="city-container_label">
+    <label class="city-container__label">
         Санкт-Петербург
     </label>
   </div>
@@ -22,7 +22,7 @@
   margin-left: 1em;
 }
 
-.city-container_label {
+.city-container__label {
   font-size: 0.9em;
 }
 </style>
