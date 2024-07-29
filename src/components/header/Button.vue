@@ -2,18 +2,12 @@
 </script>
 
 <template>
-  <div class="divclass">
-    <button class="button">
-      Войти
-    </button>
-  </div>
+  <button class="button">
+    Войти
+  </button>
 </template>
 
 <style scoped>
-.divclass {
-  display: flex;
-  align-items: center;
-}
 .button {
   font-family: 'Geometria', sans-serif;
   background-color: #FFFFFF;
@@ -26,7 +20,6 @@
   border: 2px solid; 
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left: 1em;
 }
 
 .button:hover {
@@ -37,8 +30,7 @@
 }
 
 .button:focus {
-  border: 3px solid;
-  box-shadow: 0 0 0 3px rgba(0, 211, 109, 0.3);
+  box-shadow: 0 0 3px 3px rgba(0, 211, 109, 0.3);
 }
 
 .button:active {

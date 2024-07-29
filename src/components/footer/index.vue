@@ -1,11 +1,10 @@
 <script setup lang="ts">
+import LeftContainer from './LeftContainer.vue'
 </script>
 
 <template>
   <footer class="footer">
-    <div class="footer_left">
-        <p>лево</p>
-    </div>
+    <LeftContainer />
     <div class="footer_right">
         <p>право</p>
     </div>
@@ -16,17 +15,15 @@
 .footer {
     background-color: #ffffff;
     height: 18em;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 30% 70%;
 }
 
 .footer_left {
     background-color: aqua;
-    width: 30%;
 }
 
 .footer_right {
     background-color: aquamarine;
-    width: 70%;
 }
 </style>

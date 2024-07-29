@@ -58,5 +58,6 @@ import ModalWindow from './ModalWindow.vue';
   height: 100%;
   justify-content:center;
   align-items: end;
+  column-gap: 1em;
 }
 </style>

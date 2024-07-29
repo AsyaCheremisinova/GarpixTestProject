@@ -1,12 +1,14 @@
 <script setup lang="ts">
+import '@iconify/iconify';
 </script>
 
 <template>
   <div class="magnifier-container">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <form action="">
       <input class="magnifier-container_input" type="search" placeholder="Поиск">
-      <button class="fa fa-search"></button>
+      <button type="submit" class="magnifier-container_button">
+        <span class="iconify" data-icon="simple-line-icons:magnifier" data-inline="false"></span>
+      </button>
       <div class="underline"></div>
     </form>
   </div>
@@ -34,7 +36,7 @@ form {
   overflow: visible;
 }
 
-input {
+.magnifier-container_input {
   position: absolute;
   top: 0;
   left: 0;
@@ -49,10 +51,15 @@ input {
   font-family: 'Geometria', sans-serif;
 }
 
-.fa {
+.magnifier-container_button{
+  border: none;
+  background-color: #ffffff;
+}
+
+.iconify {
   box-sizing: border-box;
-  width: 1.6em;
-  height: 1.6em;
+  width: 1.4em;
+  height: 1.4em;
   position: absolute;
   top: 0;
   right: 0;
