@@ -30,8 +30,7 @@
 }
 
 .button:focus {
-  border: 3px solid;
-  box-shadow: 0 0 0 3px rgba(0, 211, 109, 0.3);
+  box-shadow: 0 0 3px 3px rgba(0, 211, 109, 0.3);
 }
 
 .button:active {
