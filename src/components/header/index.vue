@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HeaderTabs from './HeaderTabs.vue'
+import HeaderTabs from './Tabs.vue'
 import City from './City.vue';
 import ButtonSignIn from './Button.vue'
 import SearchInput from './SearchInput.vue'
@@ -42,6 +42,7 @@ import ModalWindow from './ModalWindow.vue';
   justify-content:center;
   width: 100%;
   padding-top: 0.5em;
+  padding-left: 2em
 }
 
 .header__content {

@@ -76,6 +76,7 @@ form {
   font-size: 1.3em;
   border: none;
   background-color: #ffffff;
+  color: rgb(59, 59, 59);
 }
 
 form:hover {

@@ -54,14 +54,15 @@ const setActiveLink = (event: Event) => {
     text-decoration: none;
     color: inherit;
     font-size: 18px;
+    color: rgb(124, 124, 124);
   }
 
   a:hover {
-    font-weight: bold;
+    color: #000000;
   }
 
   a.active {
-    font-weight: bold;
+    color: #000000;
     text-decoration: underline;
   }
 }
