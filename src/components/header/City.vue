@@ -24,5 +24,6 @@
 
 .city-container__label {
   font-size: 0.9em;
+  color: rgb(124, 124, 124);
 }
 </style>
