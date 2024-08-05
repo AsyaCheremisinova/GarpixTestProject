@@ -22,7 +22,7 @@
 .container__partner {
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: var(--white);
     height: 17em;
     border-radius: 8px;
 }

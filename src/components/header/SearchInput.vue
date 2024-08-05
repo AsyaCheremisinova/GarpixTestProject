@@ -29,7 +29,7 @@ form {
   transition: all 0.5s;
   width: 2em;  
   height: 2em; 
-  background: white;
+  background: var(--white);
   box-sizing: border-box;
   padding: 0.25em;
   overflow: visible;
@@ -61,7 +61,7 @@ form {
 
 .magnifier-container__button{
   border: none;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .iconify {
@@ -71,11 +71,10 @@ form {
   position: absolute;
   top: 0;
   right: 0;
-  color: #07051a;
   text-align: center;
   font-size: 1.3em;
   border: none;
-  background-color: #ffffff;
+  background-color: var(--white);
   color: rgb(59, 59, 59);
 }
 

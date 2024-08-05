@@ -19,7 +19,7 @@
     top: 3.7em;
     right: 12.5em;
     height: 4em;
-    background: white;
+    background: var(--white);
     border-radius: 8px;
     padding: 1.5em;
     box-shadow: 1px 0px 30px rgba(0, 0, 0, 0.1);
@@ -40,7 +40,7 @@
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid white;
+    border-bottom: 10px solid var(--white);
 }
 
 .modal-window__buttons {
@@ -53,21 +53,21 @@
 button {
     padding: 0.5em 1em;
     border-radius: 5px;
-    border: 2px solid #00D36D;
+    border: 2px solid var(--green);
     font-family: 'Geometria', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .modal-window__buttons__yes-button {
-    background-color: #00D36D;
-    color: white;
+    background-color: var(--green);
+    color: var(--white);
     width: 6em;
 }
 
 .modal-window__buttons__change-button {
-    background-color: white;
-    color: #00D36D;
+    background-color: var(--white);
+    color: var(--green);
     width: 10.5em;
 }
 
@@ -81,9 +81,9 @@ button:focus {
 }
 
 button:active {
-  background-color: #00D36D;
-  color: #FFFFFF;
-  border-color: #00D36D;
+  background-color: var(--green);
+  color: var(--white);
+  border-color: var(--green);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(1px);
 }

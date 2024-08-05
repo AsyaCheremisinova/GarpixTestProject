@@ -12,7 +12,7 @@ import RightContainer from './RightContainer.vue';
 
 <style scoped>
 .footer {
-    background-color: #ffffff;
+    background-color: var(--white);
     height: 18em;
     display: grid;
     grid-template-columns: 30% 70%;

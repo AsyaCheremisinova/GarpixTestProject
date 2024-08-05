@@ -20,7 +20,7 @@ import Buttons from './Buttons.vue';
 }
 
 .right-container__p {
-    color: rgb(124, 124, 124);
+    color: var(--gray-text-color);
     font-size: 0.85em;
     margin: 0;
     margin-top: 1.9em;
@@ -32,6 +32,6 @@ a {
 }
 
 a:hover {
-    color: rgb(67, 66, 66);
+    color: var(--gray-text-hover-color);
 }
 </style>

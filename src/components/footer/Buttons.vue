@@ -62,7 +62,7 @@
 }
 
 button {
-    background-color: #ffffff;
+    background-color: var(--white);
     border: none;
     cursor: pointer;
     justify-content: center;

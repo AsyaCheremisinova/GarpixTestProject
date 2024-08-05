@@ -44,7 +44,7 @@
 .sber-info__top__second-p {
     margin: 0;
     font-size: 0.85em;
-    color: rgb(124, 124, 124);
+    color: var(--gray-text-color);
 }
 
 .sber-info__bottom {
@@ -60,6 +60,6 @@
 .sber-info__bottom__p {
     font-size: 0.85em;
     margin-top: 2em;
-    color: rgb(124, 124, 124);
+    color: var(--gray-text-color);
 }
 </style>
