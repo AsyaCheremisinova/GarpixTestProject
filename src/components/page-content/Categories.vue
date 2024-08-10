@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 
 // Список категорий для рендеринга кнопок
-const   CATEGORIES = [
+const CATEGORIES = [
   "Все партнеры",
   "Популярные",
   "Супермаркеты",

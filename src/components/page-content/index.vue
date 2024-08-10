@@ -2,6 +2,7 @@
 import Categories from './Categories.vue';
 import Switch from './Switch.vue';
 import Partners from './Partners.vue';
+import Offers from './Offers.vue';
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import Partners from './Partners.vue';
         <Categories />
         <Switch />
         <Partners />
+        <Offers />
     </div>  
 </template>
 
