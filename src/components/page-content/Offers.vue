@@ -148,6 +148,7 @@ button {
   background-color: var(--green);
   color: var(--white);
   margin-top: 2em;
+  margin-bottom: 5em;
   padding: 0.7em 1.2em;
   border-radius: 8px;
   transition: all 0.2s, color 0.2s;

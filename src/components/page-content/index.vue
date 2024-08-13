@@ -3,6 +3,7 @@ import Categories from './Categories.vue';
 import Switch from './Switch.vue';
 import Partners from './Partners.vue';
 import Offers from './Offers.vue';
+import OfferBlocks from './OfferBlocks.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import Offers from './Offers.vue';
         <Switch />
         <Partners />
         <Offers />
+        <OfferBlocks />
     </div>  
 </template>
 
