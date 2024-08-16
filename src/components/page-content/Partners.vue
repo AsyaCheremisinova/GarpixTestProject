@@ -106,7 +106,7 @@ function showMorePartners() {
     margin: 3em 0;
     gap: 1.2em;
     flex-wrap: wrap;
-    width: 80%;
+    width: 81%;
 }
 
 .container__partner {

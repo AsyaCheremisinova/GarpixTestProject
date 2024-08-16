@@ -18,7 +18,7 @@ import '@iconify/iconify';
   position: relative;
   display: flex;
   justify-content: end;
-  align-items: end;
+  align-items: center;
   width: 20%;
   overflow: visible;
 }

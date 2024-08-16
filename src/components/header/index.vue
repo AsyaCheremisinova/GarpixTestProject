@@ -32,7 +32,8 @@ import ModalWindow from './ModalWindow.vue';
 }
 
 .logo {
-  width: 100%;
+  width: 13em;
+  justify-self: end;
 }
 
 .container-right{
@@ -40,25 +41,25 @@ import ModalWindow from './ModalWindow.vue';
   flex-direction: column;
   align-items: center;
   justify-content:center;
-  width: 100%;
+  width: 92%;
   padding-top: 0.5em;
-  padding-left: 2em
+  padding-left: 2em;
+  gap: 1.5em;
 }
 
 .header__content {
   display: grid;
-  width: 1270px;
-  grid-template-columns: 180px auto 300px;
-  margin: auto;
-  padding: 16px;
+  width: 97%;
+  grid-template-columns: 24% 52% 24%;
+  padding: 1em;
 }
 
 .container-bottom {
   display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content:center;
-  align-items: end;
+  width: 90%;
+  height: 40%;
+  justify-content:start;
+  align-items: center;
   column-gap: 1em;
 }
 </style>

@@ -44,6 +44,7 @@ const setActiveLink = (event: Event) => {
   padding-top: 0.5em;
   padding-left: 0;
   margin: 0;
+  color: #444444;
 
   li {
     white-space: nowrap;
@@ -57,7 +58,7 @@ const setActiveLink = (event: Event) => {
   }
 
   a:hover {
-    font-weight: bold;
+    color: #000000;
   }
 
   a.active {

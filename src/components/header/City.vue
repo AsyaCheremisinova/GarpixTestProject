@@ -15,11 +15,11 @@
 <style scoped>
 .city-container {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   column-gap: 0.5em;
-  width: 100%;    
-  margin-left: 1em;
+  width: 90%;
+  margin-left: 2em;
 }
 
 .city-container__label {

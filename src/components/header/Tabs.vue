@@ -36,12 +36,11 @@ const setActiveLink = (event: Event) => {
 }
 
 .menu__list {
-  height: 70px;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   column-gap: 2em;
-  row-gap: 1.5em;
+  row-gap: 2em;
   padding-top: 0.5em;
   margin: 0;
 
