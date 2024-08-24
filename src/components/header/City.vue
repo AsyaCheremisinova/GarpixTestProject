@@ -26,4 +26,12 @@
   font-size: 0.9em;
   color: var(--gray-text-color);
 }
+
+@media (max-width: 770px) {
+  .city-container {
+    justify-content: end;
+    margin-right: 4%;
+    flex-direction: column;
+  }
+}
 </style>

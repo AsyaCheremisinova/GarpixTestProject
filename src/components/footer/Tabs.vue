@@ -66,4 +66,10 @@ const setActiveLink = (event: Event) => {
     text-decoration: underline;
   }
 }
+
+@media (max-width: 770px) {
+    .tabs {
+        display: none;
+    }
+}
 </style>

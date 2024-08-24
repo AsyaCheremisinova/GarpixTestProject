@@ -51,6 +51,7 @@
     display: flex;
     flex-direction: column;
     height: 50%;
+    justify-content: end;
 }
 
 .sber-info__bottom__logo {
@@ -61,5 +62,15 @@
     font-size: 0.85em;
     margin-top: 2em;
     color: var(--gray-text-color);
+}
+
+@media (max-width: 770px) {
+    .sber-info__bottom {
+        display: none;
+    }
+
+    .sber-info__top__first-p {
+        text-align: center;
+    }
 }
 </style>

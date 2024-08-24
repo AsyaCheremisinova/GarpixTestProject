@@ -201,6 +201,7 @@ const PERSONAL_IMG= [
     justify-content: center;
     align-content: center;
     gap: 5em;
+    flex-wrap: wrap;
 }
 
 .center-blocks__item {

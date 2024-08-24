@@ -81,4 +81,20 @@ button :active {
   transform: translateY(1px);
 }
 
+@media (max-width: 770px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        gap: 1em;
+    }
+    
+    .container__left {
+        order: 2;
+    }
+
+    .container__right {
+        order: 1;
+    }
+}
 </style>

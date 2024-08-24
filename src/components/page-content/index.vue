@@ -28,5 +28,6 @@ import OfferBlocks from './OfferBlocks.vue';
 .content__h1 {
     margin-top: 1.5em;
     font-size: 3em;
+    text-align: center;
 }
 </style>

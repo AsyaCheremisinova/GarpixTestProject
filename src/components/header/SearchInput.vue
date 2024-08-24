@@ -33,6 +33,7 @@ form {
   box-sizing: border-box;
   padding: 0.25em;
   overflow: visible;
+  width: 100%;
 }
 
 .magnifier-container__input {
@@ -43,7 +44,7 @@ form {
   height: 1.8em;
   line-height: 1.8em;
   outline: 0;
-  border: 0;
+  border: 0; 
   display: none;
   font-size: 1em;
   padding: 1em;
@@ -89,5 +90,41 @@ form:hover input {
 
 form:hover .magnifier-container__input {
   border-bottom: 0.1em solid rgb(189, 189, 189);
+}
+
+@media (max-width: 770px) { 
+  .magnifier-container {
+    height: 100%;
+    justify-content: center;
+    width: 97%;
+    border: 2em;
+    border-color: red;
+  }
+
+  .magnifier-container__input {
+    width: 100%;
+    border-top: 0.2em solid;
+    border-left: 0.2em solid;
+    border-right: 0.2em solid;
+    border-bottom: 0.2em solid;
+    
+    border-radius: 8px;
+    display: initial;
+    border-color: var(--green);    
+  }
+  
+  form:hover {
+    width: 100%;
+  }
+
+  form:hover .magnifier-container__input {
+    border-bottom: 0.2em solid var(--green);
+  }
+
+  .iconify {
+    top: 20%;
+    right: 2%;
+    color: var(--gray-text-color)
+  }
 }
 </style>

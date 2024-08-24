@@ -11,8 +11,3 @@ import PageContent from './components/page-content/index.vue'
   <Footer />
 </template>
 
-<style scoped>
-.uberu-potom {
-    height: 20.6em;
-}
-</style>

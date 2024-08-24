@@ -91,6 +91,7 @@ function showMorePartners() {
     width: 25em;
     text-align: center;
     margin-top: 3.7em;
+    text-wrap: wrap;
 }
 
 .offers-container {

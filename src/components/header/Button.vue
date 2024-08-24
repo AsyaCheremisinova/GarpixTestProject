@@ -40,4 +40,10 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(2px);
 }
+
+@media (max-width: 770px) { 
+  .button {
+    width: 5em
+  }
+}
 </style>
