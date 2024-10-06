@@ -8,7 +8,11 @@ import OfferBlocks from './OfferBlocks.vue';
 
 <template>
     <div class="content">
-        <h1 class="content__h1">Партнеры и предложения</h1>
+        <h1 
+            class="content__h1"
+        >
+            Партнеры и предложения
+        </h1>
         <Categories />
         <Switch />
         <Partners />
@@ -29,5 +33,11 @@ import OfferBlocks from './OfferBlocks.vue';
     margin-top: 1.5em;
     font-size: 3em;
     text-align: center;
+}
+
+@media (max-width: 770px) {
+    .content__h1 {
+        font-size: 2em;
+    }
 }
 </style>

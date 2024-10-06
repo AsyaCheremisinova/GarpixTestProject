@@ -4,43 +4,43 @@
 <template>
     <div class="container">
         <div class="container__left">
-            <button class="container__left__button-first">
+            <button class="container__button">
                 <img
-                alt="Google play"
-                class="container__left__button-first__img"
-                src="/src/assets/google-play.svg" />
+                    alt="Google play"
+                    src="/src/assets/google-play.svg" 
+                />
             </button>
-            <button class="container__left__button-second">
+            <button class="container__button">
                 <img
-                alt="App Store"
-                class="container__left__button-second__img"
-                src="/src/assets/app-store.svg" />
+                    alt="App Store"
+                    src="/src/assets/app-store.svg" 
+                />
             </button>
         </div>
         <div class="container__right">
-            <button class="container__left__button-first">
+            <button class="container__button">
                 <img
-                alt="OK"
-                class="container__left__button-first__img"
-                src="/src/assets/ok.svg" />
+                    alt="OK"
+                    src="/src/assets/ok.svg" 
+                />
             </button>
-            <button class="container__left__button-second">
+            <button class="container__button">
                 <img
-                alt="FB"
-                class="container__left__button-second__img"
-                src="/src/assets/fb.svg" />
+                    alt="FB"
+                    src="/src/assets/fb.svg" 
+                />
             </button>
-            <button class="container__left__button-first">
+            <button class="container__button">
                 <img
-                alt="VK"
-                class="container__left__button-first__img"
-                src="/src/assets/vk.svg" />
+                    alt="VK"
+                    src="/src/assets/vk.svg" 
+                />
             </button>
-            <button class="container__left__button-second">
+            <button class="container__button">
                 <img
-                alt="Inst"
-                class="container__left__button-second__img"
-                src="/src/assets/inst.svg" />
+                    alt="Inst"
+                    src="/src/assets/inst.svg" 
+                />
             </button>
         </div>
     </div>    
@@ -57,28 +57,35 @@
 .container__left {
     display: flex;
     flex-direction: row;
-    row-gap: 1em;
+    gap: 0.5em;
     justify-content: center;
 }
 
-button {
+.container__right {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.container__button {
     background-color: var(--white);
+    height: 95%;
     border: none;
     cursor: pointer;
     justify-content: center;
     border-radius: 100px;
-}
+    padding: 0;
 
-button :hover {
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    transform: translateY(-1px);
-    border-radius: 8px;
-}
+    &:hover {
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        transform: translateY(-1px);
+        border-radius: 8px;
+    }
 
-button :active {
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transform: translateY(1px);
+    &:active {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transform: translateY(1px);
+    }
 }
 
 @media (max-width: 770px) {

@@ -1,25 +1,27 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-// Создаем реактивную переменную для отслеживания состояния переключателя
 const isChecked = ref(false);
 </script>
 
 <template>
   <div class="switch-container">
-    <!-- Применение динамических классов в зависимости от состояния переключателя -->
     <label 
       :class="{ 'active-label': isChecked }" 
       class="switch-container__label-first"
-      >
+    >
       Начисляют спасибо
     </label>
     <label class="switch-wrapper">
-      <!-- Использование v-model для связывания с реактивной переменной -->
       <input type="checkbox" v-model="isChecked">
       <span class="switch-container__switch__slider"></span>
     </label>
-    <label :class="{ 'active-label': !isChecked }" class="switch-container__label-second">Принимают спасибо</label>
+    <label 
+      :class="{ 'active-label': !isChecked }"
+       class="switch-container__label-second"
+      >
+        Принимают спасибо
+      </label>
   </div>
 </template>
 
@@ -33,7 +35,7 @@ const isChecked = ref(false);
   margin-top: 1.5em;
 }
 
-label {
+.switch-container__label-first, .switch-container__label-second {
   font-size: 1.1em;
   flex-wrap: wrap;
   width: 5em;
@@ -41,7 +43,7 @@ label {
   justify-self: center;
   text-align: center;
   margin: 0 1em;
-  color: var(--black); /* Начальный цвет текста */  
+  color: var(--black);
   transition: 0.2s;
 }
 
@@ -93,8 +95,13 @@ input:checked + .switch-container__switch__slider:before {
   transform: translateX(2em);
 }
 
-/* Динамический класс для активного состояния */
 .active-label {
-  color: var(--green); /* Зеленый цвет активного лейбла */
+  color: var(--green);
+}
+
+@media (max-width: 770px) {
+  .switch-container {
+    width: 90%;
+  }
 }
 </style>

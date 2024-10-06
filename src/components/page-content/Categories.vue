@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-// Список категорий для рендеринга кнопок
 const CATEGORIES = [
   "Все партнеры",
   "Популярные",
@@ -12,15 +11,12 @@ const CATEGORIES = [
   "Электроника и бытовая техника",
   "Зоотовары",
   "Кино и театр",
-  "..."
+  ". . ."
 ];
 
-// Создаем реактивную переменную для отслеживания выбранной кнопки
 const selectedCategory = ref<string | null>(CATEGORIES[6]);
 
-// Функция для обработки выбора кнопки
 function handleSelectCategory(category: string) {
-  // Если нажата уже выбранная категория, сбрасываем выбор
   if (selectedCategory.value === category) {
     selectedCategory.value = null;
   } else {
@@ -32,12 +28,11 @@ function handleSelectCategory(category: string) {
 
 <template>
   <div class="categories">
-    <!-- Отображаем кнопки динамически из списка категорий -->
     <button
       v-for="category in CATEGORIES"
       :key="category"
       @click="handleSelectCategory(category)"
-      :class="{ 'active-button': selectedCategory === category }"
+      :class="{ 'active-button': selectedCategory === category, 'categories__button': true }"
     >
       {{ category }}
     </button>
@@ -55,7 +50,7 @@ function handleSelectCategory(category: string) {
   margin-top: 1em;
 }
 
-button {
+.categories__button {
   font-family: 'Geometria', sans-serif;
   font-size: 1.2em;
   border: none;
@@ -63,33 +58,40 @@ button {
   padding: 0.6em;
   border-radius: 8px;
   transition: background-color 0.2s, color 0.2s;
-}
+  cursor: pointer;
 
-button:hover {
-  background-color: var(--white);
-  color: var(--black);
-  box-shadow: 0 2px 8px rgba(69, 69, 69, 0.15);
-}
+  &:hover {
+    background-color: var(--white);
+    color: var(--black);
+    box-shadow: 0 2px 8px rgba(69, 69, 69, 0.15);
+  }
 
-button:focus {
+  &:focus {
     box-shadow: 0 0 3px 3px rgba(0, 211, 109, 0.3);
-}
+  }
 
-button:active {
-  background-color: var(--green);
-  color: var(--white);
-  border-color: var(--green);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  &:active {
+    background-color: var(--green);
+    color: var(--white);
+    border-color: var(--green);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .active-button {
-  background-color: var(--green); /* Зеленый фон для активной кнопки */
-  color: var(--white); /* Цвет текста для активной кнопки */
+  background-color: var(--green);
+  color: var(--white); 
+
+  &:hover {
+    background-color: var(--green);
+    color: var(--white);
+    box-shadow: 0 2px 8px rgba(69, 69, 69, 0.15);
+  }
 }
 
-.active-button:hover {
-  background-color: var(--green);
-  color: var(--white);
-  box-shadow: 0 2px 8px rgba(69, 69, 69, 0.15);
+@media (max-width: 770px) {
+  .categories {
+    width: 90%;
+  }
 }
 </style>

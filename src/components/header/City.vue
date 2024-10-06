@@ -1,4 +1,16 @@
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { useUserStore } from '@/stores/userStore';
+
+export default defineComponent({
+  setup() {
+    const userStore = useUserStore();
+
+    return {
+      userStore,
+    };
+  },
+});
 </script>
 
 <template>
@@ -7,7 +19,7 @@
         alt="City icon"
         src="/src/assets/geo.svg" />
     <label class="city-container__label">
-        Санкт-Петербург
+        {{ userStore.city }}
     </label>
   </div>
 </template>
@@ -15,11 +27,10 @@
 <style scoped>
 .city-container {
   display: flex;
-  justify-content: start;
+  justify-content: end;
   align-items: center;
   column-gap: 0.5em;
   width: 90%;
-  margin-left: 2em;
 }
 
 .city-container__label {

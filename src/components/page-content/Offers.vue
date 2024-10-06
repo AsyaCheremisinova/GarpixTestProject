@@ -61,19 +61,28 @@ function showMorePartners() {
         <div 
             v-for="offer in displayedOffers" 
             :key="offer.name" 
-            class="offers-container__offer">
+            class="offers-container__offer"
+        >
             <img
                 :alt= offer.name
                 class="offers-container__offer__img"
-                :src= offer.imgFirst />
+                :src= offer.imgFirst 
+            />
             <div class="offers-container__offer__bottom">
                 <img
                     :alt= offer.name
                     class="offers-container__offer__bottom__img"
-                    :src= offer.imgSecond />
+                    :src= offer.imgSecond 
+                />
                 <div class="offers-container__offer__bottom__labels">
-                    <label class="offers-container__offer__bottom__labels__name">{{ offer.name }}</label>
-                    <label class="offers-container__offer__bottom__labels__label">{{ offer.label }}</label>
+                    <label 
+                        class="offers-container__offer__bottom__labels__name">
+                        {{ offer.name }}
+                    </label>
+                    <label 
+                        class="offers-container__offer__bottom__labels__label">
+                        {{ offer.label }}
+                    </label>
                 </div>
             </div>
         </div>
@@ -98,20 +107,21 @@ function showMorePartners() {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1.2em;
+    gap: 1.5em;
     margin-top: 2em;
     justify-content: center;
-    width: 90%;
+    width: 85%;
+    align-self: center;
 }
 
 .offers-container__offer {
     display: flex;
     flex-direction: column;
-    width: 25em;
+    width: 23em;
 }
 
 .offers-container__offer__img {
-    width: 25em;
+    width: auto;
 }
 
 .offers-container__offer__bottom {
@@ -153,6 +163,7 @@ button {
   padding: 0.7em 1.2em;
   border-radius: 8px;
   transition: all 0.2s, color 0.2s;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.207);
@@ -169,5 +180,26 @@ button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transform: translateY(2px);
   }
+}
+
+@media (max-width: 770px) {
+    .offers-h2 {
+        width: 95%;
+        margin-top: 1em;
+    }
+
+    .offers-container__offer {
+        margin-bottom: 2em;
+    }
+
+    button {
+        margin-bottom: 2em;
+    }
+}
+
+@media (max-width: 395px) {
+    .offers-container__offer {
+        width: 17em;
+    }
 }
 </style>

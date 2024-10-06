@@ -23,6 +23,7 @@ import RightContainer from './RightContainer.vue';
     .footer {
         height: auto;
         grid-template-columns: 1fr;
+        margin-top: 3em;
     }
 }
 

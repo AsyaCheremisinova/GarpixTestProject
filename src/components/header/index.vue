@@ -11,24 +11,18 @@ import SideMenu from './SideMenu.vue'
   <header class="header">
     <div class="header__content">
       <div class="header__content__top">
-        <div class="header__content__top__left">
-          <SideMenu />
-          <img
-            alt="Vue logo"
-            class="header__content__logo"
-            src="/src/assets/logo_x2 1.svg" />
-        </div>
-          <div class="header__content__top__right">
-            <City class="mobile__city"/>
-            <ButtonSignIn class="mobile__button"/>
-          </div>
+        <img
+          alt="Vue logo"
+          class="header__content__top__logo"
+          src="/src/assets/logo_x2 1.svg" />
+        <SideMenu />
       </div>
       <HeaderTabs />
       <div class="header__content__container-right">
         <City class="header__content__container-right__city"/>
-        <div class="header__content__container-bottom">
+        <div class="header__content__container-right__bottom">
           <SearchInput />
-          <ButtonSignIn class="header__content__container-bottom__button"/>
+          <ButtonSignIn class="header__content__container-right__bottom__button"/>
         </div>
       </div> 
     </div>  
@@ -44,7 +38,7 @@ import SideMenu from './SideMenu.vue'
 .header__content {
   display: grid;
   width: 97%;
-  grid-template-columns: 24% 52% 24%;
+  grid-template-columns: 21% 52% 28%;
   padding: 1em;
 }
 
@@ -53,8 +47,8 @@ import SideMenu from './SideMenu.vue'
   justify-content: end;
 }
 
-.header__content__logo {
-  width: 13em;
+.header__content__top__logo {
+  width: 11em;
   justify-self: end;
 }
 
@@ -63,17 +57,17 @@ import SideMenu from './SideMenu.vue'
   flex-direction: column;
   align-items: center;
   justify-content:center;
-  width: 92%;
+  width: 50%;
   padding-top: 0.5em;
   padding-left: 2em;
   gap: 1.5em;
 }
 
-.header__content__container-bottom {
+.header__content__container-right__bottom {
   display: flex;
   width: 90%;
   height: 40%;
-  justify-content:start;
+  justify-content:end;
   align-items: center;
   column-gap: 1em;
 }
@@ -91,14 +85,15 @@ import SideMenu from './SideMenu.vue'
     grid-template-columns: 100%;
     grid-template-rows: 60% 40%;
     height: 100%;
+    padding: 1em 0 1em 1em;
   }
 
   .header__content__top {
     justify-content: space-between;
-    width: 97%;
+    width: 96%;
   }
 
-  .header__content__logo {
+  .header__content__top__logo {
     width: 8em;
   }
 
@@ -106,6 +101,8 @@ import SideMenu from './SideMenu.vue'
     display: flex;
     flex-direction: row;
     gap: 0.5em;
+    width: 63%;
+    justify-content: space-between;
   }
 
   .header__content__container-right {
@@ -115,7 +112,7 @@ import SideMenu from './SideMenu.vue'
     margin-top: 0.5em;
   }
 
-  .header__content__container-bottom {
+  .header__content__container-right__bottom {
     order: 2;
     height: 2em;
     width: 100%;
@@ -126,7 +123,7 @@ import SideMenu from './SideMenu.vue'
     display: none;
   }
 
-  .header__content__container-bottom__button {
+  .header__content__container-right__bottom__button {
     display: none;
   }
 

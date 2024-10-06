@@ -1,17 +1,34 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
+import City from './City.vue';
+import ButtonSignIn from './Button.vue';
+
+const TABS = [
+"Купоны и сертификаты",
+"Впечатления",
+"Авиабилеты",
+"Ж/д билеты",
+"Отели",
+"Каршеринг",
+"Театры",
+"Страхование",
+"Как подключиться",
+"Партнеры"
+];
 
 const activeLink = ref<HTMLElement | null>(null);
 const isSideMenuOpen = ref(false);
 
 const toggleMenu = () => {
   isSideMenuOpen.value = !isSideMenuOpen.value;
+  document.body.style.overflow = isSideMenuOpen.value ? 'hidden' : 'auto';
 };
 
 const closeSideMenu = (event: Event) => {
   const target = event.target as HTMLElement;
   if (!target.closest('.side-menu') && !target.closest('.burger')) {
     isSideMenuOpen.value = false;
+    document.body.style.overflow = 'auto'; 
   }
 };
 
@@ -23,13 +40,13 @@ const setActiveLink = (event: Event) => {
   activeLink.value.classList.add('active');
 };
 
-// Добавляю и удаляю обработчик кликов
 onMounted(() => {
   document.addEventListener('click', closeSideMenu);
 });
 
 onUnmounted(() => {
   document.removeEventListener('click', closeSideMenu);
+  document.body.style.overflow = 'auto';
 });
 </script>
 
@@ -39,20 +56,28 @@ onUnmounted(() => {
         <span/>
         <span/>
     </div>
-    <div :class="{'side-menu--open': isSideMenuOpen, 'side-menu': true}">
-    <ul class="side-menu__list">
-      <li><a href="#" @click="setActiveLink">Купоны и сертификаты</a></li>
-      <li><a href="#" @click="setActiveLink">Впечатления</a></li>
-      <li><a href="#" @click="setActiveLink">Авиабилеты</a></li>
-      <li><a href="#" @click="setActiveLink">Ж/д билеты</a></li>
-      <li><a href="#" @click="setActiveLink">Отели</a></li>    
-      <li><a href="#" @click="setActiveLink">Каршеринг</a></li>
-      <li><a href="#" @click="setActiveLink">Театры</a></li>
-      <li><a href="#" @click="setActiveLink">Страхование</a></li>
-      <li><a href="#" @click="setActiveLink">Как подключиться</a></li>
-      <li><a href="#" @click="setActiveLink">Партнеры</a></li>
-    </ul>
-  </div>
+
+    <div 
+      :class="{'overlay--visible': isSideMenuOpen, 'overlay': true}" 
+      @click="toggleMenu">
+    </div>
+    <div 
+      :class="{'side-menu--open': isSideMenuOpen, 'side-menu': true}"
+    >
+      <div class="side-menu__top">
+        <City class="side-menu__top__city"/>
+        <ButtonSignIn />
+      </div>
+      <ul class="side-menu__list">
+        <li v-for = 'tab in TABS'>
+          <a 
+            href="#" 
+            @click="setActiveLink">
+            {{ tab }}
+          </a>
+        </li>
+      </ul>
+    </div>
 </template>
 
 <style scoped>
@@ -74,24 +99,25 @@ onUnmounted(() => {
 .side-menu {
   position: fixed;
   top: 0;
-  left: -250px;
-  width: 250px;
+  right: -18em;
+  width: 18em;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--white);
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   overflow-y: auto;
-  transition: left 0.3s ease;
-  z-index: 1000;
+  transition: right 0.3s ease;
+  z-index: 10001;
 }
 
 .side-menu--open {
-  left: 0;
+  right: 0;
 }
 
 .side-menu__list {
   list-style: none;
   padding: 1em;
   margin: 0;
+  z-index: 101;
 }
 
 .side-menu__list li {
@@ -107,6 +133,51 @@ onUnmounted(() => {
 
 .side-menu__list a:hover {
   color: var(--black);
+}
+
+.side-menu__top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 5.1em;
+  border-bottom: 1px solid;
+  border-color: var(--gray-text-color);
+}
+
+.side-menu__top__city {
+  margin: 0;
+  width: 50%;
+}
+
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.322);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: opasity 0.3s ease, visible 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 100; 
+  pointer-events: none; 
+}
+
+.overlay--visible {
+  background:rgba(0, 0, 0, 0.322);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (max-width: 770px) {

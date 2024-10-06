@@ -4,15 +4,25 @@
 <template>
     <div class="sber-info">
         <div class="sber-info__top">
-            <p class="sber-info__top__first-p">900</p>
-            <p class="sber-info__top__second-p">По России бесплатно</p>
+            <p 
+                class="sber-info__top__first-p">
+                900
+            </p>
+            <p 
+                class="sber-info__top__second-p">
+                По России бесплатно
+            </p>
         </div>
         <div class="sber-info__bottom">
             <img
                 alt="Sber logo"
                 class="sber-info__bottom__logo"
-                src="/src/assets/sberlogo.svg" />
-            <p class="sber-info__bottom__p">© 1997—2019 ПАО Сбербанк.</p>
+                src="/src/assets/sberlogo.svg" 
+            />
+            <p 
+                class="sber-info__bottom__p">
+                © 1997—2019 ПАО Сбербанк.
+            </p>
         </div>
 
     </div>
@@ -56,6 +66,7 @@
 
 .sber-info__bottom__logo {
     width: 10em;
+    margin-top: 3em;
 }
 
 .sber-info__bottom__p {

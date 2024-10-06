@@ -106,7 +106,7 @@ function showMorePartners() {
     margin: 3em 0;
     gap: 1.2em;
     flex-wrap: wrap;
-    width: 81%;
+    width: 85%;
 }
 
 .container__partner {
@@ -114,8 +114,9 @@ function showMorePartners() {
     flex-direction: column;
     background-color: var(--white);
     height: 19em;
-    width: 14.5em;
+    width: 14em;
     border-radius: 8px;
+    cursor: pointer;
 
     &:hover {
         box-shadow: 0 5px 10px rgba(69, 69, 69, 0.095);
@@ -158,6 +159,7 @@ button {
   padding: 0.7em 1.2em;
   border-radius: 8px;
   transition: all 0.2s, color 0.2s;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.207);
@@ -174,5 +176,25 @@ button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transform: translateY(2px);
   }
+}
+
+@media (max-width: 770px) {
+    .container {
+        width: 90%;
+    }
+
+    .container__partner {
+        width: 12em;
+        height: 17em;
+    }
+
+    .container__partner__percent {
+        font-size: 1.4em;
+    }
+    
+    .container__partner__label {
+        padding-left: 1.8em;
+        padding-top: 0.5em;
+    }
 }
 </style>
