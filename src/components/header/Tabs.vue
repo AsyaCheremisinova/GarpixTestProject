@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
+const TABS = [
+  "Купоны и сертификаты",
+  "Впечатления",
+  "Авиабилеты",
+  "Ж/д билеты",
+  "Отели",
+  "Каршеринг",
+  "Театры",
+  "Страхование",
+  "Как подключиться",
+  "Партнеры"
+];
+
 const activeLink = ref<HTMLElement | null>(null);
 
 const setActiveLink = (event: Event) => {
@@ -14,56 +27,75 @@ const setActiveLink = (event: Event) => {
 
 <template>
   <nav class="menu">
-    <ul class="menu__list">
-      <li><a href="#" @click="setActiveLink">Купоны и сертификаты</a></li>
-      <li><a href="#" @click="setActiveLink">Впечатления</a></li>
-      <li><a href="#" @click="setActiveLink">Авиабилеты</a></li>
-      <li><a href="#" @click="setActiveLink">Ж/д билеты</a></li>
-      <li><a href="#" @click="setActiveLink">Отели</a></li>    
-      <li><a href="#" @click="setActiveLink">Каршеринг</a></li>
-      <li><a href="#" @click="setActiveLink">Театры</a></li>
-      <li><a href="#" @click="setActiveLink">Страхование</a></li>
-      <li><a href="#" @click="setActiveLink">Как подключиться</a></li>
-      <li><a href="#" @click="setActiveLink">Партнеры</a></li>
-    </ul>
+    <div class="menu__container">
+      <ul class="menu__container__list">
+        <li v-for = 'tab in TABS'>
+          <a 
+            href="#" 
+            @click="setActiveLink">
+            {{ tab }}
+          </a>
+        </li>
+      </ul>
+    </div>
   </nav>
+  
 </template>
 
 <style scoped>
 .menu {
   padding-top: 0 2em;
   box-sizing: border-box;
+  position: relative;
 }
 
-.menu__list {
-  height: 70px;
+.menu__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu__container__list {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  column-gap: 2em;
-  row-gap: 1.5em;
+  column-gap: 1.5em;
+  row-gap: 1.9em;
   padding-top: 0.5em;
   margin: 0;
+  transition: max-height 0.3s ease;
 
   li {
     white-space: nowrap;
     display: inline-block;
   }
-  
+
   a {
     text-decoration: none;
     color: inherit;
     font-size: 18px;
-    color: rgb(124, 124, 124);
+    color: var(--gray-text-color);
   }
 
   a:hover {
-    color: #000000;
+    color: var(--black);
   }
 
   a.active {
-    color: #000000;
+    color: var(--black);
     text-decoration: underline;
+  }
+}
+
+@media (max-width: 770px) {
+  .menu {
+    order: 0;
+    display: none;
+    flex-direction: row;
+    gap: 1em;
+  }
+
+  .menu__container__list {
+    display: none;
   }
 }
 </style>

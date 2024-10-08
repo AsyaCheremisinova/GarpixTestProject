@@ -10,10 +10,10 @@
 <style scoped>
 .button {
   font-family: 'Geometria', sans-serif;
-  background-color: #FFFFFF;
-  border-color: #00D36D;
+  background-color: var(--white);
+  border-color: var(--green);
   border-radius: 8px;
-  color: #00D36D;
+  color: var(--green);
   width: 7em;
   height: 2.7em;
   outline: none;
@@ -23,8 +23,8 @@
 }
 
 .button:hover {
-  background-color: #FFFFFF;
-  color: #00D36D;
+  background-color:  var(--white);
+  color: var(--green);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
@@ -34,10 +34,16 @@
 }
 
 .button:active {
-  background-color: #00D36D;
-  color: #FFFFFF;
-  border-color: #00D36D;
+  background-color: var(--green);
+  color:  var(--white);
+  border-color: var(--green);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(2px);
+}
+
+@media (max-width: 770px) { 
+  .button {
+    width: 5em
+  }
 }
 </style>

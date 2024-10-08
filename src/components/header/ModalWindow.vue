@@ -1,14 +1,34 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useUserStore } from '@/stores/userStore'
+
+const userStore = useUserStore();
+
+const isModalVisible = ref(true);
+
+const closeModal = () => {
+    isModalVisible.value = false
+};
 </script>
 
 <template>    
-    <div class="modal-window">
+    <div v-if="isModalVisible" class="modal-window">
         <label>
-            Ваш город - <strong>Санкт-Петербург</strong>?
+            Ваш город - <strong>{{ userStore.city }}</strong>?
         </label>
         <div class="modal-window__buttons">
-            <button class="modal-window__buttons__yes-button">Да</button>
-            <button class="modal-window__buttons__change-button">Сменить город</button>
+            <button 
+                class="modal-window__buttons__yes-button" 
+                @click="closeModal"
+            >
+                Да
+            </button>
+            <button 
+                class="modal-window__buttons__change-button" 
+                @click="closeModal"
+            >
+                Сменить город
+            </button>
         </div>
     </div>
 </template>
@@ -17,9 +37,9 @@
 .modal-window {
     position: absolute;
     top: 3.7em;
-    right: 12.5em;
+    right: 15em;
     height: 4em;
-    background: white;
+    background: var(--white);
     border-radius: 8px;
     padding: 1.5em;
     box-shadow: 1px 0px 30px rgba(0, 0, 0, 0.1);
@@ -28,19 +48,18 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    visibility: hidden;
 }
 
 .modal-window::before {
     content: '';
     position: absolute;
-    top: -10px;
+    top: -9px;
     right: 20px;
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid white;
+    border-bottom: 10px solid var(--white);
 }
 
 .modal-window__buttons {
@@ -48,26 +67,27 @@
     justify-content: space-between;
     margin-top: 1em;
     width: 100%;
+    gap:1em;
 }
 
 button {
     padding: 0.5em 1em;
     border-radius: 5px;
-    border: 2px solid #00D36D;
+    border: 2px solid var(--green);
     font-family: 'Geometria', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .modal-window__buttons__yes-button {
-    background-color: #00D36D;
-    color: white;
+    background-color: var(--green);
+    color: var(--white);
     width: 6em;
 }
 
 .modal-window__buttons__change-button {
-    background-color: white;
-    color: #00D36D;
+    background-color: var(--white);
+    color: var(--green);
     width: 10.5em;
 }
 
@@ -81,11 +101,22 @@ button:focus {
 }
 
 button:active {
-  background-color: #00D36D;
-  color: #FFFFFF;
-  border-color: #00D36D;
+  background-color: var(--green);
+  color: var(--white);
+  border-color: var(--green);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(1px);
+}
+
+@media (max-width: 770px)
+{
+    .modal-window {
+        right: 2em;
+    }
+
+    .modal-window::before {
+        display: none;
+    }
 }
 </style>
   

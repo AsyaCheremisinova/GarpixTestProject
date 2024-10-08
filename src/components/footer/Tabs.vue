@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
+const TABS = [
+  "Купоны и сертификаты",
+  "Впечатления",
+  "Авиабилеты",
+  "Ж/д билеты",
+  "Отели",
+  "Каршеринг",
+  "Театры",
+  "Страхование",
+  "Как подключиться",
+  "Партнеры"
+];
+
 const activeLink = ref<HTMLElement | null>(null);
 
 const setActiveLink = (event: Event) => {
@@ -15,16 +28,13 @@ const setActiveLink = (event: Event) => {
 <template>
   <nav class="tabs">
     <ul class="tabs__list">
-      <li><a href="#" @click="setActiveLink">Купоны и сертификаты</a></li>
-      <li><a href="#" @click="setActiveLink">Впечатления</a></li>
-      <li><a href="#" @click="setActiveLink">Авиабилеты</a></li>
-      <li><a href="#" @click="setActiveLink">Ж/д билеты</a></li>
-      <li><a href="#" @click="setActiveLink">Отели</a></li>    
-      <li><a href="#" @click="setActiveLink">Каршеринг</a></li>
-      <li><a href="#" @click="setActiveLink">Театры</a></li>
-      <li><a href="#" @click="setActiveLink">Страхование</a></li>
-      <li><a href="#" @click="setActiveLink">Как подключиться</a></li>
-      <li><a href="#" @click="setActiveLink">Партнеры</a></li>
+      <li v-for = 'tab in TABS'>
+        <a 
+          href="#" 
+          @click="setActiveLink">
+          {{ tab }}
+        </a>
+      </li>
     </ul>
   </nav>
 </template>
@@ -44,6 +54,7 @@ const setActiveLink = (event: Event) => {
   padding-top: 0.5em;
   padding-left: 0;
   margin: 0;
+  color: #444444;
 
   li {
     white-space: nowrap;
@@ -53,16 +64,22 @@ const setActiveLink = (event: Event) => {
   a {
     text-decoration: none;
     color: inherit;
-    font-size: 1.1em;
+    font-size: 18px;
   }
 
   a:hover {
-    font-weight: bold;
+    color: #000000;
   }
 
   a.active {
     font-weight: bold;
     text-decoration: underline;
   }
+}
+
+@media (max-width: 770px) {
+    .tabs {
+        display: none;
+    }
 }
 </style>

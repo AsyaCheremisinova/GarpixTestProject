@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useUserStore } from '@/stores/userStore'
+
+const userStore = useUserStore();
 </script>
 
 <template>
@@ -7,7 +11,7 @@
         alt="City icon"
         src="/src/assets/geo.svg" />
     <label class="city-container__label">
-        Санкт-Петербург
+        {{ userStore.city }}
     </label>
   </div>
 </template>
@@ -15,15 +19,22 @@
 <style scoped>
 .city-container {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   column-gap: 0.5em;
-  width: 100%;    
-  margin-left: 1em;
+  width: 90%;
 }
 
 .city-container__label {
   font-size: 0.9em;
-  color: rgb(124, 124, 124);
+  color: var(--gray-text-color);
+}
+
+@media (max-width: 770px) {
+  .city-container {
+    justify-content: end;
+    margin-right: 4%;
+    flex-direction: column;
+  }
 }
 </style>

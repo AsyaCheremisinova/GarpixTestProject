@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LeftContainer from './LeftContainer.vue'
+import LeftContainer from './LeftContainer.vue';
 import RightContainer from './RightContainer.vue';
 </script>
 
@@ -12,9 +12,19 @@ import RightContainer from './RightContainer.vue';
 
 <style scoped>
 .footer {
-    background-color: #ffffff;
-    height: 18em;
+    background-color: var(--white);
     display: grid;
     grid-template-columns: 30% 70%;
+    height: 100%;
+    padding-bottom: 2em;
 }
+
+@media (max-width: 770px) {
+    .footer {
+        height: auto;
+        grid-template-columns: 1fr;
+        margin-top: 3em;
+    }
+}
+
 </style>
